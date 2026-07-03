@@ -53,6 +53,7 @@ Constraints:
 0 <= val <= 100
 
 SOLUTION:
+IN JAVA
 
 class Solution {
     public int removeElement(int[] nums, int val) {
