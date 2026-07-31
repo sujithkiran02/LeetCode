@@ -1,8 +1,4 @@
 
-Code
-Testcase
-Testcase
-Test Result
 3014. Minimum Number of Pushes to Type Word I
 Solved
 Easy
