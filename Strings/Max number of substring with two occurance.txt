@@ -1,0 +1,53 @@
+3090. Maximum Length Substring With Two Occurrences
+Solved
+Easy
+Topics
+premium lock icon
+Companies
+Hint
+Given a string s, return the maximum length of a substring such that it contains at most two occurrences of each character.
+ 
+
+Example 1:
+
+Input: s = "bcbbbcba"
+
+Output: 4
+
+Explanation:
+
+The following substring has a length of 4 and contains at most two occurrences of each character: "bcbbbcba".
+Example 2:
+
+Input: s = "aaaa"
+
+Output: 2
+
+Explanation:
+
+The following substring has a length of 2 and contains at most two occurrences of each character: "aaaa".
+ 
+
+Constraints:
+
+2 <= s.length <= 100
+s consists only of lowercase English letters
+
+Solution:
+class Solution {
+    public int maximumLengthSubstring(String s) {
+         int res = 0;
+        int[] fq = new int[26];
+
+        for (int l = 0, r = 0; r < s.length(); r++) {
+            fq[(s.charAt(r) & 31) - 1]++;
+
+            while (fq[(s.charAt(r) & 31) - 1] > 2)
+                fq[(s.charAt(l++) & 31) - 1]--;
+
+            res = Math.max(res, r - l + 1);
+        }
+
+        return res;
+    }
+}
